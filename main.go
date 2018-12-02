@@ -2,6 +2,7 @@ package main
 
 import (
 	"adventofcode/day_01"
+	"adventofcode/day_02"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -27,6 +28,13 @@ func main() {
 			result = day_01.HandleFrequencyDrift(file)
 		case 2:
 			result = day_01.FindFirstFrequencyReachedTwice(file)
+		}
+	case 2:
+		switch part {
+		case 1:
+			result = day_02.CheckSum(file)
+		case 2:
+			result = day_02.FindTheBoxesFullOfPrototypeFabric(file)
 		}
 	}
 	fmt.Printf("%v", result)
