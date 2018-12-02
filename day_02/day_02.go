@@ -3,6 +3,7 @@ package day_02
 import (
 	"bufio"
 	"io"
+	"strings"
 )
 
 func CheckSum(file io.Reader) int {
@@ -11,16 +12,13 @@ func CheckSum(file io.Reader) int {
 	checkSumThree := 0
 	for scanner.Scan() {
 		text := scanner.Text()
-		runes := make(map[rune]int)
-		for _, r := range text {
-			runes[r]++
-		}
 		foundTwo, foundThree := false, false
-		for _, r := range runes {
-			if !foundTwo && r == 2 {
+		for _, r := range text {
+			c := countRune(text, r)
+			if !foundTwo && c == 2 {
 				foundTwo = true
 				checkSumTwo++
-			} else if !foundThree && r == 3 {
+			} else if !foundThree && c == 3 {
 				foundThree = true
 				checkSumThree++
 			}
@@ -30,6 +28,18 @@ func CheckSum(file io.Reader) int {
 		}
 	}
 	return checkSumTwo * checkSumThree
+}
+
+func countRune(s string, r rune) int {
+	n := 0
+	for {
+		i := strings.IndexRune(s, r)
+		if i == -1 {
+			return n
+		}
+		n++
+		s = s[i+1:]
+	}
 }
 
 func FindTheBoxesFullOfPrototypeFabric(file io.Reader) string {
