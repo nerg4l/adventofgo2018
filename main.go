@@ -68,7 +68,7 @@ func getDay(args []string) (int, error) {
 	if err != nil {
 		panic("First argument must be a number")
 	}
-	if day < 1 || day > 2 {
+	if day < 1 || day > 25 {
 		panic("First argument must be between 1 and 25")
 	}
 	return day, err
