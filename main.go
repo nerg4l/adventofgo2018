@@ -3,6 +3,7 @@ package main
 import (
 	"adventofcode/day_01"
 	"adventofcode/day_02"
+	"adventofcode/day_03"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -36,6 +37,15 @@ func main() {
 		case 2:
 			result = day_02.FindTheBoxesFullOfPrototypeFabric(file)
 		}
+	case 3:
+		switch part {
+		case 1:
+			result = day_03.CountFabricOverlap(file)
+		case 2:
+			result = day_03.FindNotOverlappingFabric(file)
+		}
+	default:
+		panic("Can not find implementation")
 	}
 	fmt.Printf("%v", result)
 }
