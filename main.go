@@ -5,6 +5,7 @@ import (
 	"adventofcode/day_02"
 	"adventofcode/day_03"
 	"adventofcode/day_04"
+	"adventofcode/day_05"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -51,6 +52,13 @@ func main() {
 			result = day_04.FindMostMinuteAsleepOpportunityChecksum(file)
 		case 2:
 			result = day_04.FindMostFrequentlyAsleepOpportunityChecksum(file)
+		}
+	case 5:
+		switch part {
+		case 1:
+			result = day_05.SimplifyPolymer(file)
+		case 2:
+			result = day_05.ImprovePolymer(file)
 		}
 	default:
 		panic("Can not find implementation")
