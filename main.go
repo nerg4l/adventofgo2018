@@ -6,6 +6,7 @@ import (
 	"adventofcode/day_03"
 	"adventofcode/day_04"
 	"adventofcode/day_05"
+	"adventofcode/day_06"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -59,6 +60,13 @@ func main() {
 			result = day_05.SimplifyPolymer(file)
 		case 2:
 			result = day_05.ImprovePolymer(file)
+		}
+	case 6:
+		switch part {
+		case 1:
+			result = day_06.FindLargestArea(file)
+		case 2:
+			result = day_06.FindRegionNearManyCoordinates(file, 10000)
 		}
 	default:
 		panic("Can not find implementation")
