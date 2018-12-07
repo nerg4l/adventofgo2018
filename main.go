@@ -7,6 +7,7 @@ import (
 	"adventofcode/day_04"
 	"adventofcode/day_05"
 	"adventofcode/day_06"
+	"adventofcode/day_07"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -67,6 +68,13 @@ func main() {
 			result = day_06.FindLargestArea(file)
 		case 2:
 			result = day_06.FindRegionNearManyCoordinates(file, 10000)
+		}
+	case 7:
+		switch part {
+		case 1:
+			result = day_07.OrderSteps(file)
+		case 2:
+			result = day_07.ParallelWorkTime(file, 5, 60)
 		}
 	default:
 		panic("Can not find implementation")
