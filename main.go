@@ -9,6 +9,7 @@ import (
 	"adventofcode/day_06"
 	"adventofcode/day_07"
 	"adventofcode/day_08"
+	"adventofcode/day_09"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -83,6 +84,13 @@ func main() {
 			result = day_08.SumMetadata(file)
 		case 2:
 			result = day_08.CalcValueOfNode(file)
+		}
+	case 9:
+		switch part {
+		case 1:
+			result = day_09.CalcWinningElfsScore(file, 1)
+		case 2:
+			result = day_09.CalcWinningElfsScore(file, 100)
 		}
 	default:
 		panic("Can not find implementation")
