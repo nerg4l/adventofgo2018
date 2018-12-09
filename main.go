@@ -8,6 +8,7 @@ import (
 	"adventofcode/day_05"
 	"adventofcode/day_06"
 	"adventofcode/day_07"
+	"adventofcode/day_08"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -75,6 +76,13 @@ func main() {
 			result = day_07.OrderSteps(file)
 		case 2:
 			result = day_07.ParallelWorkTime(file, 5, 60)
+		}
+	case 8:
+		switch part {
+		case 1:
+			result = day_08.SumMetadata(file)
+		case 2:
+			result = day_08.CalcValueOfNode(file)
 		}
 	default:
 		panic("Can not find implementation")
