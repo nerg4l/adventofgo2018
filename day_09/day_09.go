@@ -2,38 +2,30 @@ package day_09
 
 import (
 	"bufio"
+	"container/ring"
 	"fmt"
 	"io"
 	"math"
 )
 
-type marble struct {
-	val        int
-	prev, next *marble
-}
-
 func marbleGame(players, lastMarble int) int {
 	scores := make([]float64, players)
-	c := &marble{val: 0}
-	c.next = c
-	c.prev = c
+	r := ring.New(1)
+	r.Value = 0
 
 	for i := 1; i <= lastMarble; i++ {
 		if i%23 == 0 {
-			for j := 0; j < 7; j++ {
-				c = c.prev
+			for j := 0; j < 8; j++ {
+				r = r.Prev()
 			}
-			c.prev.next = c.next
-			c.next.prev = c.prev
-			scores[i%players] += float64(i + c.val)
-			c = c.next
+
+			u := r.Unlink(1)
+			scores[i%players] += float64(i + u.Value.(int))
+			r = r.Next()
 		} else {
-			tmp := &marble{val: i}
-			tmp.prev = c.next
-			tmp.next = c.next.next
-			tmp.prev.next = tmp
-			tmp.next.prev = tmp
-			c = tmp
+			tmp := &ring.Ring{Value: i}
+			r.Next().Link(tmp)
+			r = tmp
 		}
 	}
 
