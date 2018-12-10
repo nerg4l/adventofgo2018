@@ -10,6 +10,7 @@ import (
 	"adventofcode/day_07"
 	"adventofcode/day_08"
 	"adventofcode/day_09"
+	"adventofcode/day_10"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -91,6 +92,13 @@ func main() {
 			result = day_09.CalcWinningElfsScore(file, 1)
 		case 2:
 			result = day_09.CalcWinningElfsScore(file, 100)
+		}
+	case 10:
+		switch part {
+		case 1:
+			result = day_10.AlignTheStars(file)
+		case 2:
+			result = day_10.CalcTimeForCorrectAlign(file)
 		}
 	default:
 		panic("Can not find implementation")
