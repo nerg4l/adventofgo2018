@@ -11,6 +11,7 @@ import (
 	"adventofcode/day_08"
 	"adventofcode/day_09"
 	"adventofcode/day_10"
+	"adventofcode/day_11"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -99,6 +100,13 @@ func main() {
 			result = day_10.AlignTheStars(file)
 		case 2:
 			result = day_10.CalcTimeForCorrectAlign(file)
+		}
+	case 11:
+		switch part {
+		case 1:
+			result = day_11.FindTheLargestTotalPowerWithDefaultSize(file)
+		case 2:
+			result = day_11.FindTheLargestTotalPowerOfAllSize(file)
 		}
 	default:
 		panic("Can not find implementation")
