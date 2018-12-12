@@ -12,6 +12,7 @@ import (
 	"adventofcode/day_09"
 	"adventofcode/day_10"
 	"adventofcode/day_11"
+	"adventofcode/day_12"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -107,6 +108,13 @@ func main() {
 			result = day_11.FindTheLargestTotalPowerWithDefaultSize(file)
 		case 2:
 			result = day_11.FindTheLargestTotalPowerOfAllSize(file)
+		}
+	case 12:
+		switch part {
+		case 1:
+			result = day_12.SumNumbersOfAllPots(file, 20)
+		case 2:
+			result = day_12.SumNumbersOfAllPots(file, 50000000000)
 		}
 	default:
 		panic("Can not find implementation")
