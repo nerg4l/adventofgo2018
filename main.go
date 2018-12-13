@@ -13,6 +13,7 @@ import (
 	"adventofcode/day_10"
 	"adventofcode/day_11"
 	"adventofcode/day_12"
+	"adventofcode/day_13"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -115,6 +116,13 @@ func main() {
 			result = day_12.SumNumbersOfAllPots(file, 20)
 		case 2:
 			result = day_12.SumNumbersOfAllPots(file, 50000000000)
+		}
+	case 13:
+		switch part {
+		case 1:
+			result = day_13.FindLocationOfFirstCrash(file)
+		case 2:
+			result = day_13.FindLocationOfLastCart(file)
 		}
 	default:
 		panic("Can not find implementation")
