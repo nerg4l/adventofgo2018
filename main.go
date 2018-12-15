@@ -14,6 +14,7 @@ import (
 	"adventofcode/day_11"
 	"adventofcode/day_12"
 	"adventofcode/day_13"
+	"adventofcode/day_14"
 	"fmt"
 	"os"
 	"path/filepath"
@@ -123,6 +124,13 @@ func main() {
 			result = day_13.FindLocationOfFirstCrash(file)
 		case 2:
 			result = day_13.FindLocationOfLastCart(file)
+		}
+	case 14:
+		switch part {
+		case 1:
+			result = day_14.FindUltimateHotChocolateRecipe(file)
+		case 2:
+			result = day_14.FindUltimateHotChocolateRecipeBackward(file)
 		}
 	default:
 		panic("Can not find implementation")
