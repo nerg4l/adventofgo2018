@@ -4,23 +4,20 @@ My implementation of [Advent of Code 2018](https://adventofcode.com/2018) in Go.
 
 If you want to know more about Advent of Code read the [about section here](https://adventofcode.com/2018/about).
 
-## Parameters
+## Usage
 
-The executable must be parameterized
+The executable must have two parameters.
 
 1. Day of advent
 2. Part of the challenge
-3. Input text file
 
-Example:
+Puzzle input is read from stdin.
+
+Example usage:
 
 ```
-1 1 ./input.txt
+cat /dev/clipboard | aoc2018 1 2
 ```
-
-## Contributing
-
-I welcome everyone who would like to make this library "Harder, Better, Faster, Stronger".
 
 ## Tree
 
